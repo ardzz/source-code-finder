@@ -3,3 +3,4 @@ urllib3
 rich
 python-dotenv
 emojis
+random_user_agent
