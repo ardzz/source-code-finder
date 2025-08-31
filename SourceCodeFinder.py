@@ -32,7 +32,7 @@ if args.url:
 elif args.file:
     try:
         with open(args.file, "r") as f:
-            targets = f.read()
+            targets = [line.strip() for line in f.read().strip().split("\n") if line.strip()]
     except FileNotFoundError:
         console.print("File not found!", style="bold red")
         exit(1)
@@ -48,7 +48,7 @@ if env_thread_count >= max_cpu_count:
     exit(1)
 
 
-for url in targets.split("\n"):
+for url in targets:
     for cls in classes:
         instance = cls(url.strip())
         console.print(f"Scanning {url.strip()} with {cls.__name__} Template", style="bold blue")
