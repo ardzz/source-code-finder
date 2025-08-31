@@ -3,3 +3,6 @@ git.txt
 target.txt
 .idea/
 .env
+__pycache__/
+*.pyc
+*.pyo

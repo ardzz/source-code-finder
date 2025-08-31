@@ -16,7 +16,7 @@ disable_warnings(InsecureRequestWarning)
 
 class SourceCodeFinderInterface:
     def __init__(self, url):
-        if not url.startswith('http') or not url.startswith('https'):
+        if not url.lower().startswith('http://') and not url.lower().startswith('https://'):
             url = f'https://{url}'
         if url.endswith('/'):
             url = url[:-1]
